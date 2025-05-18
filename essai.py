@@ -52,3 +52,25 @@ st.write("Version de Python :", sys.version)
 st.subheader("sys.path : chemins de recherche des modules")
 for p in sys.path:
     st.text(p)
+
+
+import re
+
+st.title("Détecteur d'adresses e-mail avec re")
+
+# Zone de texte pour l'utilisateur
+texte = st.text_area("Entrez un texte contenant des adresses e-mail :")
+
+# Bouton pour lancer l'extraction
+if st.button("Extraire les e-mails"):
+    # Expression régulière pour détecter les adresses e-mail
+    pattern = r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+"
+    
+    emails = re.findall(pattern, texte)
+    
+    if emails:
+        st.success("Voici les e-mails détectés :")
+        for email in emails:
+            st.write(f"📧 {email}")
+    else:
+        st.warning("Aucune adresse e-mail trouvée.")
