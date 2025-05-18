@@ -41,7 +41,7 @@ if uploaded_file is not None:
     st.subheader("Contenu du fichier :")
     st.text(contenu)
 
-mport sys
+import sys
 
 st.title("Exemple avec le module sys")
 
