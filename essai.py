@@ -40,3 +40,15 @@ if uploaded_file is not None:
 
     st.subheader("Contenu du fichier :")
     st.text(contenu)
+
+mport sys
+
+st.title("Exemple avec le module sys")
+
+# Afficher la version de Python
+st.write("Version de Python :", sys.version)
+
+# Afficher les chemins de recherche des modules
+st.subheader("sys.path : chemins de recherche des modules")
+for p in sys.path:
+    st.text(p)
