@@ -22,3 +22,21 @@ fig, ax = plt.subplots()
 ax.plot(x, y)
 ax.set_title("Courbe sinusoïdale")
 st.pyplot(fig)
+
+import io
+
+st.title("Lire un fichier texte avec io")
+
+# Chargement du fichier par l'utilisateur
+uploaded_file = st.file_uploader("Choisissez un fichier texte (.txt)", type=["txt"])
+
+# Si un fichier est téléchargé
+if uploaded_file is not None:
+    # Lire le fichier en mémoire avec io.StringIO
+    stringio = io.StringIO(uploaded_file.getvalue().decode("utf-8"))
+    
+    # Lire tout le texte
+    contenu = stringio.read()
+
+    st.subheader("Contenu du fichier :")
+    st.text(contenu)
