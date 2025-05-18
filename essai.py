@@ -74,3 +74,22 @@ if st.button("Extraire les e-mails"):
             st.write(f"📧 {email}")
     else:
         st.warning("Aucune adresse e-mail trouvée.")
+
+
+
+import textwrap
+
+st.title("Exemple avec le module textwrap")
+
+# Texte long
+texte = """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."""
+
+# Couper le texte à 50 caractères par ligne
+texte_formate = textwrap.fill(texte, width=50)
+
+st.subheader("Texte original :")
+st.text(texte)
+
+st.subheader("Texte formaté (50 caractères par ligne) :")
+st.text(texte_formate)
+
